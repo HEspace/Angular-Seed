@@ -1,0 +1,49 @@
+<div class="text-center">
+
+    {{maVariable}}
+
+    <form>
+        <input type="text" ng-model="person.monNom"  size="30"placeholder="Nom">
+        <input type="text" ng-model="person.monPrenom"  size="30"placeholder="Prenom">
+        <input type="number" ng-model="person.monAge"  size="30"placeholder="Age">
+
+   <!--  <span> {{person.monAGe}}    -->
+      </form>
+
+
+  <!--  <p> Bonjour je m'apelle {{monPrenom}} {{monNom}} et j'ai {{monAge}} ans ce qui fait {{monAge*12}} mois et donc je suis {{age>10? 'grand:'petit}}</p> -->
+<span class="bg-primary">{{result}} <span>
+   <pre> {{person | json }}</pre> 
+
+    <span>{{person.monAge | yearToMonth}} <span> 
+        
+        </br>
+
+        {{person.monAge}} <annee value="person.monAge"></annee>
+
+
+    </div>
+
+   <div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Author</th>
+        <th>Title</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+          
+      <tr ng-repeat = "book in books" class="success">
+        <td>{{book.author}}</td>
+        <td>{{book.title}}</td>
+       
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
