@@ -23,3 +23,27 @@
   content: "|";
   padding-right: 0.3em;
 }
+
+/* .disabled{ 
+  
+  background-color: yellow;
+
+}
+
+.required{
+  background-color: yellow;
+}
+
+abled
+{
+
+background-color: red;
+} */
+
+input.ng-invalid.ng-touched{
+  background-color : yellow;
+}
+
+input.ng-submitted input.ng-invalid{
+  background-color : red;
+}

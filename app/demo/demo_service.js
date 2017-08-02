@@ -1,12 +1,14 @@
 "use strict";
 
 angular.module('myApp.demo')
-    .service('DemoService',['$filter', function($filter){
+    .service('DemoService',['$filter','config','$http','$resource', 
+    function($filter, config, $http, $resource){
 
       /*    this.maFonctionprivee = function(){
 
 
         }  */
+
 
         this.compute = function(person){
             return 'Je m\'appelle : '+ person.monNom + ' ' + 
@@ -15,6 +17,26 @@ angular.module('myApp.demo')
                    $filter('yearToMonth')(person.monAge)+ ' mois et donc je suis : ------> '+
                    (person.monAge>10? 'grand':'petit');
         }
+
+        this.logConfig = function(){
+            console.log(config.apiUrl);
+        
+        }
+
+    /*     this.getPosts = function(){
+           var promise =  $http.get(config.apiUrl);
+           console.log(promise);
+        } */
+            this.getPosts = function(){
+          return $http.get(config.apiUrl);
+            }
+
+
+            this.getPostsViaResource = function() {
+          return $resource(config.apiUrl).query();
+      } 
+
+
     }]);
 
     /*    .factory ('DemoService', function(){
@@ -30,6 +52,7 @@ angular.module('myApp.demo')
 
       });  */
 
+      
     
 
 

@@ -1,10 +1,13 @@
+<!doctype html>
+<html ng-app="demoApp">
+
 <div class="text-center">
 
     {{maVariable}}
 
     <form>
-        <input type="text" ng-model="person.monNom"  size="30"placeholder="Nom">
-        <input type="text" ng-model="person.monPrenom"  size="30"placeholder="Prenom">
+        <input type="text" ng-model="person.monNom"  size="30"placeholder="Nom" ng-style = "groundOne()">
+        <input type="text" ng-model="person.monPrenom"  size="30"placeholder="Prenom" ng-style = "groundOne()">
         <input type="number" ng-model="person.monAge"  size="30"placeholder="Age">
 
    <!--  <span> {{person.monAGe}}    -->
@@ -42,8 +45,110 @@
       </tr>
     </tbody>
   </table>
-</div>
+  
+
+ <!--  <select ng-options="book.title for book in books track by book.id"
+    ng-model="selectedBook">
+    <option></option>
+  </select> {{selectedBook}} -->
+
+
+  <select ng-options="book.text for book in books track by book.id"
+    ng-model="selectedBook">
+    <option></option>
+  </select> {{selectedBook}}
+
+
+          
+    
+				
+				  <form name="demoForm" ng-submit="submit()" novalidate>
+          <label> Titre<input
+          
+           
+            name = "title" 
+            required ng-minlength="3" 
+            ng-model="searchTitle"/>
+          </label>
+
+          <ul>
+            <ng-messages for="demoForm.title.$error">
+              <ng-message when="required">
+                <li>Le Titre est requis</li>
+                </ng-message>
+
+                <ng-message when="minlength">
+                <li>Le Titre est requis et doit poséder 3 caractéres</li>
+                </ng-message>
+            </ng-messages>
+              </ul>
+
+          <label> Auteur<input 
+         
+            
+            name = "author" 
+             required ng-minlength="3" 
+             ng-model="searchAuthor"/>
+          
+          <input 
+          
+          type="submit"/>
+          </label>
+
+
+          <ul>
+            <ng-messages for="demoForm.author.$error">
+              <ng-message when="required">
+                <li>L'auteur est requis</li>
+                </ng-message>
+
+
+                <ng-message when="minlength">
+                <li>L'auteur est requis et doit poséder 3 caractéres</li>
+                </ng-message>
+            </ng-messages>
+              </ul>
+
+          <pre>{{demoForm | json}}</pre>
+					
+				  </form>
+    
 
 
 
 
+        <!--   
+				  <form>
+					<input  type="text" name="user" placeholder="Username" ng-style = "groundZero()">
+					<input  type="password" name="pass" placeholder="Password" ng-style = "groundZero()">
+					<input class="btn-primary" type="submit" name="login" class="login loginmodal-submit" value="Login">
+				  </form>
+                  </div>
+ -->
+
+			 
+
+
+
+<!--  <div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Author</th>
+        <th>Title</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+          
+      <tr ng-repeat = "datas in data" class="info">
+        <td>{{datas.id}}</td>
+        <td>{{datas.title}}</td>
+        <td>{{datas.body}}</td>
+       
+      </tr>
+    </tbody>
+  </table>
+
+  {{data}}
+ -->
