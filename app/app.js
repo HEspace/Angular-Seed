@@ -1,6 +1,7 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
+/* angular.module('myApp.shop',[]) */
 angular.module('myApp', [
   'ngRoute',
   'ngResource',
@@ -8,6 +9,7 @@ angular.module('myApp', [
   'myApp.view1',
   'myApp.view2',
   'myApp.demo',
+  'myApp.shop',
   'myApp.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
@@ -30,6 +32,13 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
     templateUrl: 'demo/demo.html',
     controller: 'DemoCtrl',
     controllerAs:'ctrl'
+
+      });
+
+         $routeProvider.when('/shop', {
+    templateUrl: 'shop/shop.html',
+    controller: 'ShopCtrl',
+    controllerAs:'Sctrl'
 
       });
 

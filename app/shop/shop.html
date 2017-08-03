@@ -1,0 +1,70 @@
+<!doctype html>
+<html ng-app="shopApp">
+
+<h1 ng-show="showMessage">Votre commande de {{quantity}} albums a été effectuée </h1>
+{{acheter}}
+	  <form name="shopForm" ng-submit="submit()" novalidate>
+          <div>
+            <label> Quantité </br>
+                <input name = "title"
+                        type="number"
+                        required
+                        ng-model="quantity"/>
+            </label>
+          </div>
+
+          <div>
+            <label>Album </br>
+                <select name="album" class="selectpicker" required ng-options="album.title for album in albums" ng-model="selectedAlbums" >
+                    </select>
+          
+         </div>
+
+             <input type="submit" ng-click="aAjouterArticle()" value = "Ajouter au panier" ng-disabled="shopForm.$invalid"/>
+          </label>
+
+					
+                  </form>
+
+
+ <table name = "shopTable" class="table">
+    <thead>
+      <tr>
+        <th>Quantité</th>
+        <th>Titre de l'album</th>  
+      </tr>
+    </thead>
+    <tbody>
+          
+      <tr ng-repeat = "album in panier" class="info">
+        <td>{{album.quantite}}</td>
+        <td>{{album.titre}}</td>
+        <td><button class="btn btn-danger" ng-click="suprimerArticle($index)">X</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <input type="submit" ng-click="acheter()" value = "Acheter" ng-disabled="shopTable.$invalid" ng-show="tailleDuPanier()"/>
+ <!-- <table class="table">
+    <thead>
+      <tr>
+        <th>Quantité</th>
+        <th>Titre de l'album</th>  
+      </tr>
+    </thead>
+    <tbody>
+          
+      <tr ng-repeat = "album in albums" class="info">
+        <td>{{album.id}}</td>
+        <td>{{album.title}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+          
+
+
+                  <pre>{{shopForm | json}}</pre>  -->
+
+                

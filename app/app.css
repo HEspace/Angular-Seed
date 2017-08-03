@@ -24,7 +24,7 @@
   padding-right: 0.3em;
 }
 
-/* .disabled{ 
+.disabled{ 
   
   background-color: yellow;
 
@@ -34,11 +34,11 @@
   background-color: yellow;
 }
 
-abled
+/* abled
 {
 
 background-color: red;
-} */
+}  */
 
 input.ng-invalid.ng-touched{
   background-color : yellow;
@@ -46,4 +46,19 @@ input.ng-invalid.ng-touched{
 
 input.ng-submitted input.ng-invalid{
   background-color : red;
+}
+
+input.ng-valid, selected.ng-valid{
+  border-width:6px;
+   border-style:solid;
+  border-color: green;
+  
+  
+}
+
+select.ng-valid{
+  border-width:6px;
+   border-style:solid;
+  border-color: green;
+  
 }
